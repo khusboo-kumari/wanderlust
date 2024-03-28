@@ -1,0 +1,104 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+  <!--  column div, offset is used to give spacing from left-->
+  <div class="col-6 offset-2">
+    <br /><br />
+    <h2>Create a new Listing</h2>
+    <form
+      method="POST"
+      action="/listings"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <!-- mb-3 means spacing, margin bottom 3 -->
+      <div class="mb-3">
+        <label for="title" class="form-label">Enter Title</label>
+
+        <input
+          type="text"
+          name="listing[title]"
+          placeholder="Add a catchy title"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title looks good (:)</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter a short description</div>
+      </div>
+
+      <!-- <div class="mb-3">
+        <label for="image" class="form-label">Image Link</label>
+
+        <input
+          type="text"
+          name="listing[image]"
+          placeholder="enter image URL/Link"
+          class="form-control"
+        />
+      </div> -->
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Listing Image</label>
+
+        <input
+          type="file" 
+          name="listing[image]"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <!-- lets put price and country in same row  -->
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            name="listing[price]"
+            placeholder="1400"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid price</div>
+        </div>
+
+        <div class="mb-3 col-md-7">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            name="listing[location]"
+            placeholder="Rishikesh,Uttarkhand"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Location should be valid</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+
+        <input
+          type="text"
+          name="listing[country]"
+          placeholder="India"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please enter that country name</div>
+      </div>
+
+      <button class="btn btn-dark add-btn mt-3">Add</button>
+    </form>
+  </div>
+</div>
+<!-- <script src="/js/script.js"></script> -->
+<!-- insetead include it in the boilerplate -->
