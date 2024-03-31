@@ -114,6 +114,8 @@ app.use((req, res, next) => {
 app.use("/listings", listingRouter); // because of thus line ,middleware we are able  to access the listing.js file which is inside the router folder.
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+app.use("/", listingRouter);
+
 
 // For page not found - that is all route other than the above routres, only if that doesnt match
 app.all("*", (req, res, next) => {
